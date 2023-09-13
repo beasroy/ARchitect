@@ -12,7 +12,7 @@ function Navbar() {
     const [open, setOpen] = useState(false);
 
     return (
-        <header className='relative w-full  z-10 bg-white '>
+        <header className='relative w-full  z-10 bg-white shadow-sm shadow-gray-400'>
             <nav className='flex w-full  px-4 md:px-20 items-center justify-between'>
             <Link to="/" className='flex items-center justify-center cursor-pointer'>
                     <img src={logo} alt="Logo" className='hidden md:block w-20 h-20 lg:w-50 lg:h-50' />

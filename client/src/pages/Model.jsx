@@ -1,8 +1,12 @@
 import React from 'react'
 import UnityGame from '../unityEngine'
+import Navbar from '../components/Navbar'
 const Model = () => {
   return (
-    <UnityGame />
+    <>
+      <Navbar />
+      <UnityGame />
+    </>
   )
 }
 
