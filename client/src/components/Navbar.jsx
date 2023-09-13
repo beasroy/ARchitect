@@ -20,10 +20,10 @@ function Navbar() {
             </Link>
             <ul className='hidden md:flex text-amber-600  text-lf font-semibold gap-8'>
                     <li>
-                        <a href="/">Home</a>
+                        <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <a href="/recipes">Explore</a>
+                        <Link to="/model">Explore</Link>
                     </li>
                     <li>
                         <Link to="/budget">Budget</Link>
