@@ -1,20 +1,30 @@
 import React from 'react'
 
 const Button = ({
-    isDisabled,
-    btnType, conteinerStyle, textStyle, title, rightIcon, handleClick
+    label,
+    iconURL,
+    backgroundColor,
+    textColor,
+    borderColor,
+    fullWidth,
 }) => {
     return (
-        <button disabled={isDisabled ?? false}
-            type={btnType || "button"}
-            className={`custom-btn ${conteinerStyle}`}
-            onClick={handleClick}
-        >
-            <span className='flex-1'>{title}</span>
-            {rightIcon && <div className='relative w-6 h-6'>
-                {rightIcon}
-            </div>}
-        </button>
+        <button
+        
+        className={`flex justify-center items-center gap-2 px-7 py-2 border font-montserrat text-lg leading-none  
+        ${
+          backgroundColor
+            ? `${backgroundColor} ${textColor} ${borderColor}`
+            : "bg-gradient-to-tr from-amber-200 to-amber-700  text-white border-[#f9d959] "
+        } rounded-full ${fullWidth && "w-full"}`}
+      >
+            {label}
+           { iconURL &&<img 
+                src={iconURL}
+                alt="arrow right"
+                className="ml-2 rounded-full w-5 h-5"
+            />}
+        </button> 
     )
 }
 

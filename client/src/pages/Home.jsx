@@ -1,10 +1,11 @@
 import React from 'react';
 import Header from '../components/Header';
-
+import Navbar from '../components/Navbar';
 
 function Home() {
     return (
         <main className='w-full flex flex-col'>
+            <Navbar />
            <Header title={
             <p>Build your Dream home with
                <br />ARchitect ! </p>

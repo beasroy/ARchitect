@@ -3,4 +3,4 @@ import Home2 from "./Home Bg2.jpg"
 import logo from "./logo.png"
 
 
-export { Home1, Home2 };
+export { Home1, Home2,logo };

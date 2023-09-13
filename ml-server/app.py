@@ -31,9 +31,10 @@ def predict():
 
         # Make a prediction using the trained model
         prediction = pipe.predict(input_data)[0]
+       
 
         # Return the prediction as a JSON response
-        return jsonify({'prediction': float(prediction)})
+        return jsonify({'prediction': float(round(prediction,2))})
     
     except Exception as e:
         # Handle any exceptions and return an error
