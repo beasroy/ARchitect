@@ -41,4 +41,51 @@ body {
 
 .bg_gradient {
   @apply bg-gradient-to-t from-slate-900 to-transparent top-0
+} 
+
+.btn {
+  @apply px-4 py-[0.35rem] rounded-lg transition-a sm:cursor-pointer !uppercase flex-shrink-0;
 }
+
+.btn-primary {
+  @apply bg-primary text-white hover:bg-[#f7751e] shadow-md shadow-primary/60;
+}
+
+.filter {
+  @apply w-full px-3 py-2 border outline-none dark:border-dark bg-slate-100 dark:bg-dark-light;
+}
+
+/* Check box & radio box */
+.input-check label,
+.input-radio label {
+  @apply relative flex items-center cursor-pointer select-none;
+}
+
+.input-check input[type="checkbox"],
+.input-radio input[type="radio"] {
+  @apply absolute opacity-0 cursor-pointer;
+}
+
+.input-check label::before {
+  content: "";
+  @apply w-4 h-4 mr-2 border rounded border-primary;
+}
+
+.input-check input[type="checkbox"]:checked + label::before {
+  content: "✔";
+  @apply grid place-items-center text-slate-100 text-[0.7rem] bg-primary;
+}
+
+.input-radio label::before {
+  content: "";
+  @apply w-4 h-4 mr-2 rounded-full border !border-primary;
+}
+.input-radio label::after {
+  content: "";
+  @apply absolute w-2 h-2 top-1/2 left-0 -translate-y-1/2 scale-0 ml-[0.25rem] bg-primary transition-a rounded-full;
+}
+
+.input-radio input[type="radio"]:checked + label::after {
+  @apply scale-100 -translate-y-1/2;
+}
+

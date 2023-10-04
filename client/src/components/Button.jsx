@@ -15,7 +15,7 @@ const Button = ({
         ${
           backgroundColor
             ? `${backgroundColor} ${textColor} ${borderColor}`
-            : "bg-gradient-to-tr from-amber-200 to-amber-700  text-white border-[#f9d959] "
+            : "bg-gradient-to-tr from-amber-200 to-amber-700  text-white border-[#f9d959]  "
         } rounded-full ${fullWidth && "w-full"}`}
       >
             {label}
