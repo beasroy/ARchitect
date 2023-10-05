@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Navbar from '../components/Navbar';
 import UseCard from '../components/UseCard';
 import { arhome, customizeAR,cost } from '../assets/images';
+import Footer from '../components/Footer';
 
 function Home() {
     return (
@@ -27,6 +28,9 @@ function Home() {
                 <UseCard image={cost} details="ARchitect assures budget confidence, offering affordable home models" />
               </div>
             </section> 
+            <section className="bg-[#3D0C11] padding-x  ">
+              <Footer />
+            </section>
         </main>
     );
 }
