@@ -9,7 +9,7 @@ const initialState = {
    sqft:[],
    status: 'idle',
   // totalItems:0,
-  // selectedProduct:null
+  selectedProduct:null
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -26,14 +26,14 @@ export const fetchAllProductsAsync = createAsyncThunk(
   }
 );
 
-// export const fetchAllProductByIdAsync = createAsyncThunk(
-//   'product/fetchProductById',
-//   async (id) => {
-//     const response = await fetchProductById(id);
-//     // The value we return becomes the `fulfilled` action payload
-//     return response.data;
-//   }
-// );
+export const fetchProductByIdAsync = createAsyncThunk(
+  'product/fetchProductById',
+  async (id) => {
+    const response = await fetchProductById(id);
+    // The value we return becomes the `fulfilled` action payload
+    return response.data;
+  }
+);
 
 export const fetchProductsByFiltersAsync = createAsyncThunk(
   'product/fetchProductsByFilters',
@@ -137,13 +137,13 @@ export const productSlice = createSlice({
         state.status = 'idle';
         state.sqft = action.payload;
       })
-      // .addCase(fetchAllProductByIdAsync.pending, (state) => {
-      //   state.status = 'loading';
-      // })
-      // .addCase(fetchAllProductByIdAsync.fulfilled, (state, action) => {
-      //   state.status = 'idle';
-      //   state.selectedProduct = action.payload;
-      // })
+      .addCase(fetchProductByIdAsync.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchProductByIdAsync.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.products = action.payload;
+      })
   },
 });
 
@@ -160,7 +160,8 @@ export const selectAllProducts = (state) => state.product.products;
  export const selectBhk = (state) => state.product.bhk;
 
  export const selectSqft = (state) => state.product.sqft;
-// export const selectProductById = (state) => state.product.selectedProduct;
+
+ export const selectProductById = (state) => state.product.selectedProduct;
 
 
 

@@ -9,6 +9,8 @@ import {
   selectBhk, selectLocations, selectPriceRanges, selectSqft
 } from '../productSlice.js';
 
+import { Link } from 'react-router-dom';
+
 import { Property } from '../../assets/images/index.js';
 
 
@@ -64,9 +66,9 @@ export default function ProductList() {
   },[])
 
   const handleFilter = (e, section, option) => {
-    const newFilter = { ...filter, [section.id]: option.value };
-    setFilter(newFilter);
-    dispatch(fetchProductsByFiltersAsync(newFilter));
+    // const newFilter = { ...filter, [section.id]: option.value };
+    // setFilter(newFilter);
+    // dispatch(fetchProductsByFiltersAsync(newFilter));
     console.log(section.id, option.value);
   };
 
@@ -96,7 +98,7 @@ export default function ProductList() {
 
             <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4 xl:gap-x-8">
               {products.map((product) => (
-
+                <Link to={`/product-detail/${product.id}`} key={product.id}>
                 <div className="group relative  rounded-md p-3 shadow-lg shadow-neutral-200">
                   <div className=" min-h-60 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60">
                     <img
@@ -122,7 +124,7 @@ export default function ProductList() {
                     </div>
                   </div>
                 </div>
-
+                </Link>
               ))}
             </div>
           </div>
@@ -139,20 +141,22 @@ export default function ProductList() {
               <h1 className="font-bold">{section.name}</h1>
               <div className="flex-align-center gap-x-2">
                 {/* <BiBuildings />          */}
+               
                 <select
                   name={`${section.name}[]`}
                   id={`${section.id}`}
                   className="w-full bg-transparent border-0 outline-none dark:bg-hover-color-dark opacity-70"
                 >
                    <option >choose</option>
-                  {section.options.map((option) => (
-                  <option defaultValue={option.value} 
+                   {section.options.map((option,optionIdx) => (
+                  <option id={`filter-${section.id}-${optionIdx}`} Value={option.value}  name={`${section.id}[]`}
                   onChange={e => handleFilter(e, section, option)} >{option.label}</option>
                   ))}
                 </select>
                 
-                
+               
               </div>
+             
             </div>
           </div>
           ))}
