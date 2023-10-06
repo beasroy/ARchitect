@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "House 1",
-      "description": "An apple mobile which is nothing like apple",
+      "description": "Introducing our modern 2 BHK model in Salt Lake Sector 5, featuring a spacious living area, well-equipped kitchen, and comfortable bedrooms. With abundant natural light and a prime location near business districts and amenities, it offers convenience and comfort for contemporary living.",
       "location": "Salt Lake Sector V, Kolkata",
       "bhk": 2,
       "price": "15,00,00,00",
@@ -25,7 +25,7 @@
     {
       "id": 2,
       "title": "House 2",
-      "description": "An apple mobile which is nothing like apple",
+      "description": "Discover our exquisite 3 BHK pre-built house model nestled in the serene locale of Rajpur Sonarpur, Kolkata. This spacious abode features three bedrooms, a contemporary kitchen, and ample living space, providing a perfect blend of comfort and modern living. Enjoy the tranquility of this sought-after location while being well-connected to the heart of Kolkata.",
       "location": "Rajpur Sonarpur,Kolkata",
       "bhk": 3,
       "price": "28,00,00,00",
@@ -47,7 +47,7 @@
     {
       "id": 3,
       "title": "House 3",
-      "description": "An apple mobile which is nothing like apple",
+      "description": "Experience luxurious living in our 4 BHK pre-built house model located in the prestigious neighborhood of Narendrapur, Kolkata. With four spacious bedrooms, a stylish kitchen, and generous living areas, this residence offers an opulent lifestyle. Enjoy the tranquility of this prime location while being within easy reach of Kolkata's amenities and attractions.",
       "location": "Narendrapur, Kolkata",
       "bhk": 4,
       "price": "35,00,00,00",
@@ -70,7 +70,7 @@
     {
       "id": 4,
       "title": "House 4",
-      "description": "An apple mobile which is nothing like apple",
+      "description": "Explore our elegant 3 BHK pre-built house model situated in the serene area of Sonarpur, Kolkata. This spacious dwelling features three comfortable bedrooms, a modern kitchen, and inviting living spaces, offering a harmonious blend of comfort and contemporary living. Enjoy the peaceful ambiance of this well-connected location, making it an ideal place to call home in Kolkata.",
       "location": "Sonarpur, Kolkata",
       "bhk": 3,
       "price": "48,25,000",
@@ -91,7 +91,7 @@
     {
       "id": 5,
       "title": "House 5",
-      "description": "An apple mobile which is nothing like apple",
+      "description": "Unveil our charming 2 BHK pre-built house model nestled in the heart of Baghajatin Colony, Kolkata.Featuring two cozy bedrooms, a well-appointed kitchen, and welcoming living spaces, this residence provides a perfect blend of comfort and modern convenience. Enjoy the vibrant surroundings of this sought-after location while being well-connected to Kolkata's amenities and attractions.",
       "location": "Baghajatin Colony, Kolkata",
       "bhk": 2,
       "price": "32,56,000",
@@ -114,7 +114,7 @@
     {
       "id": 6,
       "title": "House 6",
-      "description": "An apple mobile which is nothing like apple",
+      "description": "Explore our luxurious 4 BHK pre-built house model in the vibrant city of Barasat, Kolkata. With four spacious bedrooms, a modern kitchen, and generous living areas, this residence offers opulent living. Enjoy the dynamic neighborhood while being well-connected to Kolkata's amenities and attractions.",
       "location": "Barasat Kolkata",
       "bhk": 4,
       "price": "40,25,000",
@@ -136,7 +136,7 @@
     {
       "id": 7,
       "title": "House 7",
-      "description": "An apple mobile which is nothing like apple",
+      "description": "Discover our cozy 2 BHK pre-built house model in the charming town of Khardah, Kolkata. Featuring two comfortable bedrooms, a modern kitchen, and inviting living spaces, this residence offers a perfect blend of comfort and convenience. Enjoy the peaceful ambiance of this well-connected location in Kolkata.",
       "location": "Khardaha, Kolkata",
       "bhk":2 ,
       "price": "30,00,000",
