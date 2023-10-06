@@ -194,62 +194,62 @@
   ],
   "priceranges": [
     {
-      "value": "Rs 10,00,000-Rs 20,00,000 ",
-      "label": "Rs 10,00,000-Rs 20,00,000 ",
+      "value": "Rs 10,00,000-Rs 20,00,000",
+      "label": "Rs 10,00,000-Rs 20,00,000",
       "checeked": false
     },
     {
-      "value": "Rs 30,00,000-Rs 40,00,000 ",
-      "label": "Rs 30,00,000-Rs 40,00,000 ",
+      "value": "Rs 30,00,000-Rs 40,00,000",
+      "label": "Rs 30,00,000-Rs 40,00,000",
       "checeked": false
     },
     {
-      "value": "Rs 20,00,000-Rs 30,00,000 ",
-      "label": "Rs 20,00,000-Rs 30,00,000 ",
+      "value": "Rs 20,00,000-Rs 30,00,000",
+      "label": "Rs 20,00,000-Rs 30,00,000",
       "checeked": false
     },
     {
-      "value": "Rs 40,00,000-Rs 50,00,000 ",
-      "label": "Rs 40,00,000-Rs 50,00,000 ",
+      "value": "Rs 40,00,000-Rs 50,00,000",
+      "label": "Rs 40,00,000-Rs 50,00,000",
       "checeked": false
     }
   ],
   "bhk": [
     {
-      "value": 2,
-      "label": 2,
+      "value": "2",
+      "label": "2",
       "checeked": false
     },
     {
-      "value": 3,
-      "label": 3,
+      "value": "3",
+      "label": "3",
       "checeked": false
     },
     {
-      "value": 4,
-      "label": 4,
+      "value": "4",
+      "label": "4",
       "checeked": false
     }
   ],
   "sqft": [
     {
-      "value": 2000,
-      "label": 2000,
+      "value": "2000",
+      "label": "2000",
       "checeked": false
     },
     {
-      "value": 3000,
-      "label": 3000,
+      "value": "3000",
+      "label": "3000",
       "checeked": false
     },
     {
-      "value": 4000,
-      "label": 4000,
+      "value": "4000",
+      "label": "4000",
       "checeked": false
     },
     {
-      "value": 5000,
-      "label": 5000,
+      "value": "5000",
+      "label": "5000",
       "checeked": false
     }
   ]
