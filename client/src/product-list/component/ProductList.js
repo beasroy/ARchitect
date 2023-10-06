@@ -55,7 +55,7 @@ export default function ProductList() {
 
   useEffect(() => {    
     dispatch(fetchProductsByFiltersAsync(filter));
-  }, [dispatch,filter])
+  }, []) //eslint-disable-line
 
 
   useEffect(()=>{
@@ -63,13 +63,17 @@ export default function ProductList() {
     dispatch(fetchPriceRangesAsync());
     dispatch(fetchBhksAsync());
     dispatch(fetchSqftAsync());
-  },[])
+  },[]) //eslint-disable-line
 
-  const handleFilter = (e, section, option) => {
-    // const newFilter = { ...filter, [section.id]: option.value };
-    // setFilter(newFilter);
-    // dispatch(fetchProductsByFiltersAsync(newFilter));
-    console.log(section.id, option.value);
+  const handleFilter = async (e) => {
+    let data = e.target.value;
+    data = JSON.parse(data)
+    // console.log(data);
+    const newFilter = { ...filter, [data.id]: data.value };
+    setFilter(newFilter);
+    dispatch(fetchProductsByFiltersAsync(newFilter));
+    // console.log(e.target.value);
+    // console.log(section.id, option.value);
   };
 
 
@@ -135,7 +139,8 @@ export default function ProductList() {
     return (
       <div className="md:max-w-[80%] w-full mx-auto relative -mt:10 md:-mt-20">
         <div className="flex-col gap-x-4 flex-center-between gap-y-4 md:gap-y-0 md:flex-row bg-white card card-shadow dark:shadow-none">
-        {filters.map((section) => (
+        {filters.map((section) => {
+          return(
           <div className="flex-col flex-1 w-full flex-align-center gap-x-4 md:w-fit sm:flex-row gap-y-4 sm:gap-y-0">
             <div className="flex-1 w-full p-2 rounded-lg md:w-fit bg-slate-100 dark:bg-hover-color-dark card-bordered">
               <h1 className="font-bold">{section.name}</h1>
@@ -146,11 +151,13 @@ export default function ProductList() {
                   name={`${section.name}[]`}
                   id={`${section.id}`}
                   className="w-full bg-transparent border-0 outline-none dark:bg-hover-color-dark opacity-70"
+                  onChange={handleFilter}
                 >
-                   <option >choose</option>
+                   <option defaultValue value={"choose"} >choose</option>
                    {section.options.map((option,optionIdx) => (
-                  <option id={`filter-${section.id}-${optionIdx}`} Value={option.value}  name={`${section.id}[]`}
-                  onChange={e => handleFilter(e, section, option)} >{option.label}</option>
+                  <option id={`filter-${section.id}-${optionIdx}`} value={JSON.stringify({value:option.value, id:section.id})}  name={`${section.id}[]`}>
+                    {option.label}
+                    </option>
                   ))}
                 </select>
                 
@@ -159,7 +166,7 @@ export default function ProductList() {
              
             </div>
           </div>
-          ))}
+  )})}
           
           
         </div>

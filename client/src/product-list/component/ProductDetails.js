@@ -9,16 +9,18 @@ import { useParams } from 'react-router-dom';
 export default function ProductDetails() {
 
   const product = useSelector(selectProductById);
+  
   const dispatch = useDispatch();
-  const { id } = useParams()
-
+  const { id } = useParams();
   useEffect(() => {
-    dispatch(fetchProductByIdAsync(id));
-  }, [dispatch, id]);
+    console.log("H1");
+    dispatch(fetchProductByIdAsync(id))
+  }, []); //eslint-disable-line
+  
 
   return (
-   <div className="bg-white">
-      <div className="pt-6">
+    <div className="bg-white">
+      {product!=null && <div className="pt-6">
         <nav aria-label="Breadcrumb">
           <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             <li className="text-sm">
@@ -107,7 +109,7 @@ export default function ProductDetails() {
             </div>
           </div>
         </div>
-      </div>
+      </div>}
     </div>
 )
 }
