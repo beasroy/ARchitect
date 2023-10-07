@@ -55,7 +55,7 @@ export default function ProductList() {
 
   useEffect(() => {    
     dispatch(fetchProductsByFiltersAsync(filter));
-  }, []) //eslint-disable-line
+  }, [dispatch, filter]) //eslint-disable-line
 
 
   useEffect(()=>{
@@ -68,9 +68,12 @@ export default function ProductList() {
   const handleFilter = async (e) => {
     let data = e.target.value;
     data = JSON.parse(data)
-    // console.log(data);
+    console.log(data);
+    
     const newFilter = { ...filter, [data.id]: data.value };
     setFilter(newFilter);
+    console.log(filter)
+    // console.log(newFilter)
     dispatch(fetchProductsByFiltersAsync(newFilter));
     // console.log(e.target.value);
     // console.log(section.id, option.value);
@@ -81,7 +84,7 @@ export default function ProductList() {
   return (
     <>
     <section className='relative pb-10  w-100% h-[70vh] '>
-        <img src={Property} alt="image" className='w-full h-full object-cover'/>           
+        <img src={Property} alt="images" className='w-full h-full object-cover'/>           
     </section>
     <Filter handleFilter={handleFilter} filters={filters}/>
     <div className='flex flex-col  justify-center mt-20'>
@@ -153,12 +156,19 @@ export default function ProductList() {
                   className="w-full bg-transparent border-0 outline-none dark:bg-hover-color-dark opacity-70"
                   onChange={handleFilter}
                 >
-                   <option defaultValue value={"choose"} >choose</option>
-                   {section.options.map((option,optionIdx) => (
-                  <option id={`filter-${section.id}-${optionIdx}`} value={JSON.stringify({value:option.value, id:section.id})}  name={`${section.id}[]`}>
-                    {option.label}
-                    </option>
-                  ))}
+                   <option value={"choose"} >{filter[`${section.id}`]?`${filter[`${section.id}`]}`: 'choose'}</option>
+                   {
+                   section.options.map((option,optionIdx) => {
+                    
+                      if(option.label !== filter[`${section.id}`]){
+                        return (
+                          <option id={`filter-${section.id}-${optionIdx}`} value={JSON.stringify({value:option.value, id:section.id})}  name={`${section.id}[]`}>
+                            {option.label}
+                          </option>
+                        )
+                      } else return (<></>);
+                   }
+                  )}
                 </select>
                 
                
