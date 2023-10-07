@@ -11,7 +11,7 @@ function Home() {
             <Navbar />
            <Header />
 
-             <section id="about-us" className='  rounded-xl bg-amber-100 md:mx-20  px-4 mb-20 pb-5  md:px-20 max-xl:mt-20  '>
+             <section id="features" className='  rounded-xl bg-amber-100 md:mx-20  px-4 mb-20 pb-5  md:px-20 max-xl:mt-20  '>
               <div className='flex flex-col items-center justify-center mb-5 '>
                 <h1 className=' font-semibold font-montserrat text-amber-900 text-3xl md:text-4xl py-5 mt-2 text-center'>For The Buyer of New Homes</h1>
                 <p className='px-4 font-montserrat font-light text-base text-orange-900 text-center max-xl:text-justify'>Elevate your new home experience with ARchitect's 

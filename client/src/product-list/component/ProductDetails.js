@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductByIdAsync, selectProductById } from '../productSlice.js';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Navbar from '../../components/Navbar.jsx';
 import Footer from '../../components/Footer.jsx';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-
+import { incrementByAmount } from '../productSlice.js';
 
 
 
 export default function ProductDetails() {
+
+
 
   const product = useSelector(selectProductById);
 
@@ -106,20 +108,21 @@ export default function ProductDetails() {
       <p className="text-3xl tracking-tight text-gray-900">Rs. {product.price}</p>
       <h2 className="text-xl font-medium text-[#3D0C11] mt-5">Details</h2>
       <div className='flex flex-col mt-5'>
-        <p className='text-base py-2'>📍 {product.location}</p>
+        <p className='text-base py-2'>📍 {product.locations}</p>
         <p className='text-base py-2'>🏠 {product.bhk} BHK</p>
         <p className='text-base py-2'>📐 {product.sqft} sqft</p>
       </div>
   
 
 
-
+      <Link to="/model">
       <button
         type="submit"
        
          className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent px-8 py-3 text-base font-medium  bg-gradient-to-tr from-rose-500 to-[#3D0C11]  text-white border-[#f9d959]">
         View in AR
       </button>
+      </Link>
 
     </div>
 

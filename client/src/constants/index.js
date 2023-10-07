@@ -12,9 +12,9 @@ export const footerLinks = [
     {
         title: "Features",
         links: [
-            { name: "3D Immeraive visualisation", link: "/" },
-            { name: "Customization on Real time", link: "/" },
-            { name: "Real time Budgest estimation", link: "/" },
+            { name: "3D Immeraive visualisation", link: "/#features" },
+            { name: "Customization on Real time", link: "/#features" },
+            { name: "Real time Budgest estimation", link: "/#features" },
         ],
     },
     {

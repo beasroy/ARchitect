@@ -83,7 +83,7 @@ export default function ProductList() {
 
   return (
     <>
-    <section className='relative pb-10  w-100% h-[70vh] '>
+    <section className='relative pb-10  w-100% h-[60vh] '>
         <img src={Property} alt="images" className='w-full h-full object-cover'/>           
     </section>
     <Filter handleFilter={handleFilter} filters={filters}/>
@@ -100,13 +100,13 @@ export default function ProductList() {
       <div className="lg:col-span-3 mb-10">
         {/* This is our product lit */}
         <div className="bg-white">
-          <div className="mx-auto max-w-2xl px-4 py-0 sm:px-6 sm:py-0 md:max-w-4xl lg:max-w-7xl lg:px-8">
+          <div className="mx-auto max-w-2xl px-4 py-0 sm:px-6 sm:py-0 md:max-w-4xl lg:max-w-7xl lg:px-8 ">
 
 
-            <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:gap-x-8">
+            <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:gap-x-8 ">
               {products.map((product) => (
                 <Link to={`/product-detail/${product.id}`} key={product.id}>
-                <div className="group relative  rounded-md p-3 shadow-lg shadow-neutral-200">
+                <div className="group relative  rounded-md p-3 shadow-lg shadow-neutral-200 md:hover:scale-110 ">
                   <div className=" min-h-60 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60 ">
                     <img
                       src={product.thumbnail}
@@ -120,13 +120,14 @@ export default function ProductList() {
                         <div >
                           <span aria-hidden="true" className="absolute inset-0" />
                           {product.title}
-                          <p className="text-sm  font-medium text-black">{product.location}</p>
+                          <p className="text-sm  font-medium text-black">{product.locations}</p>
                         </div>
                       </h3>
 
                     </div>
                     <div>
                       <p className="text-sm  font-medium text-gray-800">₹{product.price}</p>
+                      <p className="text-sm  font-medium text-gray-800 pl-2">{product.bhk} BHK</p>
 
                     </div>
                   </div>
@@ -141,11 +142,11 @@ export default function ProductList() {
   function Filter({handleFilter,filters}){
     return (
       <div className="md:max-w-[80%] w-full mx-auto relative -mt:10 md:-mt-20">
-        <div className="flex-col gap-x-4 flex-center-between gap-y-4 md:gap-y-0 md:flex-row bg-white card card-shadow dark:shadow-none">
+        <div className="flex-col gap-x-4 flex-center-between gap-y-4 md:gap-y-0 md:flex-row bg-white card card-shadow ">
         {filters.map((section) => {
           return(
           <div className="flex-col flex-1 w-full flex-align-center gap-x-4 md:w-fit sm:flex-row gap-y-4 sm:gap-y-0">
-            <div className="flex-1 w-full p-2 rounded-lg md:w-fit bg-slate-100 dark:bg-hover-color-dark card-bordered">
+            <div className="flex-1 w-full p-2 rounded-lg md:w-fit bg-slate-100 card-bordered">
               <h1 className="font-bold">{section.name}</h1>
               <div className="flex-align-center gap-x-2">
                 {/* <BiBuildings />          */}

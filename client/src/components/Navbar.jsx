@@ -26,7 +26,7 @@ function Navbar() {
                          <Link to="/explore">Explore</Link>
                      </li>
                      <li>
-                         <Link to="/budget">Budget</Link>
+                         <a href="/#features">Features</a>
                      </li>
             </ul>
             <ButtonNav
@@ -42,7 +42,7 @@ function Navbar() {
             <div className={`${open ? "flex" : "hidden"} bg-black flex-col w-full px-4 pt-16 pb-10 text-white gap-6 text-[14px]`}>
                 <Link to="/">Home</Link>
                 <Link to="/explore">Explore</Link>
-                <Link to="/">Budget</Link>
+                <a href="/#features">Features</a>
             </div>
         </header>
     );
