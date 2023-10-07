@@ -133,7 +133,7 @@ export default function ProductDetails() {
       </Link>
       <button
         type="submit"
-         className="mt-5 flex w-full items-center justify-center rounded-md border border-transparent px-8 py-3 text-base font-medium  bg-white  text-[#3D0C11] border-[#3D0C11] hover:bg-gradient-to-tr from-rose-500 to-[#3D0C11] hover:text-white">
+         className="mt-5 flex w-full items-center justify-center rounded-md border  px-8 py-3 text-base font-medium  bg-white  text-[#3D0C11] border-[#3D0C11] hover:bg-gradient-to-tr from-rose-500 to-[#3D0C11] hover:text-white">
        📞 Contact Agent
       </button>
       </div>
