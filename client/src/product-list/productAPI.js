@@ -1,7 +1,7 @@
 // A mock function to mimic making an async request for data
 export function fetchAllProducts() {
   return new Promise(async (resolve) => {
-    const response = await fetch("http://localhost:8000/products/all", {
+    const response = await fetch("https://architect-m6fg.onrender.com/products/all", {
       method:"GET",
     });
     const {products} = await response.json();
@@ -27,7 +27,7 @@ export function fetchProductsByFilters(filter) {
 
     // const filterURL = `http://localhost:8080/products?${queryString}`
     // console.log(filterURL)
-    const response = await fetch('http://localhost:8000/products/filter',
+    const response = await fetch('https://architect-m6fg.onrender.com/products/filter',
       {
         method:"POST",
         headers:{
@@ -48,7 +48,7 @@ export function fetchProductsByFilters(filter) {
 
 export function fetchLocations() {
   return new Promise(async (resolve) => {
-    const response = await fetch("http://localhost:8000/filter/locations")
+    const response = await fetch("https://architect-m6fg.onrender.com/filter/locations")
     const data = await response.json()
     resolve({ data })
   }
@@ -57,7 +57,7 @@ export function fetchLocations() {
 
  export function fetchPriceRanges() {
   return new Promise(async (resolve) => {
-    const response = await fetch("http://localhost:8000/filter/priceranges")
+    const response = await fetch("https://architect-m6fg.onrender.com/filter/priceranges")
     const data = await response.json()
     resolve({ data })
   }
@@ -65,7 +65,7 @@ export function fetchLocations() {
 }
 export function fetchBhk() {
   return new Promise(async (resolve) => {
-    const response = await fetch("http://localhost:8000/filter/bhk")
+    const response = await fetch("https://architect-m6fg.onrender.com/filter/bhk")
     const data = await response.json()
     resolve({ data })
   }
@@ -73,7 +73,7 @@ export function fetchBhk() {
 }
 export function fetchSqft() {
   return new Promise(async (resolve) => {
-    const response = await fetch("http://localhost:8000/filter/sqft")
+    const response = await fetch("https://architect-m6fg.onrender.com/filter/sqft")
     const data = await response.json()
     resolve({ data })
   }
@@ -82,7 +82,7 @@ export function fetchSqft() {
 export function fetchProductById(id) {
   return new Promise(async (resolve) =>{
     //TODO: we will not hard-code server URL here
-    const response = await fetch('http://localhost:8000/products/'+id) 
+    const response = await fetch('https://architect-m6fg.onrender.com/products/'+id) 
     const data = await response.json();
     resolve({data})
   }
