@@ -6,7 +6,8 @@ import Navbar from '../../components/Navbar.jsx';
 import Footer from '../../components/Footer.jsx';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { incrementByAmount } from '../productSlice.js';
+
+import QRCodeGenerator from '../../components/QRCode.js';
 
 
 
@@ -106,24 +107,36 @@ export default function ProductDetails() {
     <div className="mt-4 lg:row-span-3 lg:mt-0">
       <h2 className="sr-only">Product information</h2>
       <p className="text-3xl tracking-tight text-gray-900">Rs. {product.price}</p>
+      <div className='flex flex-row justify-between' >
+        <div>
       <h2 className="text-xl font-medium text-[#3D0C11] mt-5">Details</h2>
       <div className='flex flex-col mt-5'>
         <p className='text-base py-2'>📍 {product.locations}</p>
         <p className='text-base py-2'>🏠 {product.bhk} BHK</p>
         <p className='text-base py-2'>📐 {product.sqft} sqft</p>
       </div>
+      </div>
+      <div className='mt-6'>
+      <QRCodeGenerator />
+      </div>
+      </div>
   
 
-
+      <div>
       <Link to="/model">
       <button
         type="submit"
        
-         className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent px-8 py-3 text-base font-medium  bg-gradient-to-tr from-rose-500 to-[#3D0C11]  text-white border-[#f9d959]">
+         className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent px-8 py-3 text-base font-medium  bg-gradient-to-tr from-rose-500 to-[#3D0C11]  text-white ">
         View in AR
       </button>
       </Link>
-
+      <button
+        type="submit"
+         className="mt-5 flex w-full items-center justify-center rounded-md border border-transparent px-8 py-3 text-base font-medium  bg-white  text-[#3D0C11] border-[#3D0C11] hover:bg-gradient-to-tr from-rose-500 to-[#3D0C11] hover:text-white">
+       📞 Contact Agent
+      </button>
+      </div>
     </div>
 
     <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
