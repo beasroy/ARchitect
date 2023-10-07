@@ -50,7 +50,7 @@ export default function ProductDetails() {
             <div key={index}>
               <img
                 src={image}
-                alt={`Image ${index + 1}`}
+                alt={`Images ${index + 1}`}
               />
             </div>
           ))}
