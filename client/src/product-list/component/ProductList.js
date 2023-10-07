@@ -154,7 +154,7 @@ export default function ProductList() {
                 <select
                   name={`${section.name}[]`}
                   id={`${section.id}`}
-                  className="w-full bg-transparent border-0 outline-none dark:bg-hover-color-dark opacity-70"
+                  className="w-full bg-transparent border-0 outline-none"
                   onChange={handleFilter}
                 >
                    <option value={"choose"} >{filter[`${section.id}`]?`${filter[`${section.id}`]}`: 'choose'}</option>
