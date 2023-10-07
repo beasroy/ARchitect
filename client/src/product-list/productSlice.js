@@ -22,8 +22,9 @@ export const fetchAllProductsAsync = createAsyncThunk(
   'product/fetchAllProducts',
   async () => {
     const response = await fetchAllProducts();
+    console.log("FROM THUNK", response.products);
     // The value we return becomes the `fulfilled` action payload
-    return response.data;
+    return response.products;
   }
 );
 
@@ -33,8 +34,8 @@ export const fetchProductByIdAsync = createAsyncThunk(
   
     const response = await fetchProductById(id);
     // The value we return becomes the `fulfilled` action payload
-    console.log(response.data)
-    return response.data;
+    console.log("Getting Clicked Product", response.data.product)
+    return response.data.product;
   }
 );
 
@@ -43,7 +44,8 @@ export const fetchProductsByFiltersAsync = createAsyncThunk(
   async (filter) => {
     const response = await fetchProductsByFilters(filter);
     // The value we return becomes the `fulfilled` action payload
-    return response.data;
+    console.log("FROM THUNK FILTER", response.data)
+    return response.data.products;
   }
 );
 
@@ -51,8 +53,9 @@ export const fetchPriceRangesAsync = createAsyncThunk(
   'product/fetchPriceRanges',
   async () => {
     const response = await fetchPriceRanges();
+    console.log(response.data)
     // The value we return becomes the `fulfilled` action payload
-    return response.data;
+    return response.data.priceranges;
   }
 );
 
@@ -60,25 +63,27 @@ export const fetchLocationsAsync = createAsyncThunk(
   'product/fetchLocations',
   async () => {
     const response = await fetchLocations();
+    console.log(response.data)
     // The value we return becomes the `fulfilled` action payload
-    return response.data;
+    return response.data.locations;
   }
 );
-
 export const fetchBhksAsync = createAsyncThunk(
   'product/fetchBhk',
   async () => {
     const response = await fetchBhk();
+    console.log(response.data)
     // The value we return becomes the `fulfilled` action payload
-    return response.data;
+    return response.data.bhk;
   }
 );
 export const fetchSqftAsync = createAsyncThunk(
   'product/fetchSqft',
   async () => {
     const response = await fetchSqft();
+    console.log(response.data)
     // The value we return becomes the `fulfilled` action payload
-    return response.data;
+    return response.data.sqft;
   }
 );
 
@@ -111,7 +116,9 @@ export const productSlice = createSlice({
       })
       .addCase(fetchAllProductsAsync.fulfilled, (state, action) => {
         state.status = 'idle';
+        console.log("FROM REDUCERS", action.payload);
         state.products = action.payload;
+        console.log(state.products)
       })
       .addCase(fetchProductsByFiltersAsync.pending, (state) => {
         state.status = 'loading';

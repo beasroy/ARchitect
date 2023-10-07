@@ -25,7 +25,7 @@ export default function ProductList() {
   const sqft = useSelector(selectSqft)
 
   const [filter, setFilter] = useState({});
-
+  
   const filters = [
     {
       id: 'locations',
@@ -49,16 +49,19 @@ export default function ProductList() {
     }
   ]
 
-  // useEffect(() => {
-  //   dispatch(fetchAllProductsAsync())
-  // }, [dispatch])
+  
+  useEffect(() => {
+    dispatch(fetchAllProductsAsync())
+    console.log(products)
+  }, [dispatch]) //eslint-disable-line
 
-  useEffect(() => {    
-    dispatch(fetchProductsByFiltersAsync(filter));
-  }, [dispatch, filter]) //eslint-disable-line
+  // useEffect(() => {    
+  //   dispatch(fetchProductsByFiltersAsync(filter));
+  // }, [dispatch, filter]) //eslint-disable-line
 
 
   useEffect(()=>{
+    
     dispatch(fetchLocationsAsync());
     dispatch(fetchPriceRangesAsync());
     dispatch(fetchBhksAsync());
@@ -93,7 +96,7 @@ export default function ProductList() {
       <p className='text-center text-base font-sans font-light p-2'>Based on your preferences and budget</p>
       {Object.keys(filter).length!==0 && <div className="flex justify-end w-full pe-8">
         <button className='rounded-lg bg-stone-500 text-gray-200 hover:text-white p-2 text-2xl hover:scale-105 hover:shadow-lg hover:shadow-gray-700/60'
-          onClick={()=>{setFilter({}); dispatch(fetchProductsByFiltersAsync({}));}}
+          onClick={()=>{setFilter({}); dispatch(fetchAllProductsAsync());}}
         >
               Reset Filters
         </button> 
@@ -113,7 +116,7 @@ export default function ProductList() {
 
             <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:gap-x-8 ">
               {products.map((product) => (
-                <Link to={`/product-detail/${product.id}`} key={product.id}>
+                <Link to={`/product-detail/${product._id}`} key={product._id}>
                 <div className="group relative  rounded-md p-3 shadow-lg shadow-neutral-200 md:hover:scale-110 ">
                   <div className=" min-h-60 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60 ">
                     <img
