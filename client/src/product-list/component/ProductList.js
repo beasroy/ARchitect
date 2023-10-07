@@ -88,8 +88,16 @@ export default function ProductList() {
     </section>
     <Filter handleFilter={handleFilter} filters={filters}/>
     <div className='flex flex-col  justify-center mt-20'>
-      <h1 className='text-center font-sans text-3xl text-amber-950'>Homes For You</h1>
+      
+      <h1 className='text-center font-sans text-3xl text-amber-950 '>Homes For You</h1>
       <p className='text-center text-base font-sans font-light p-2'>Based on your preferences and budget</p>
+      {Object.keys(filter).length!==0 && <div className="flex justify-end w-full pe-8">
+        <button className='rounded-lg bg-stone-500 text-gray-200 hover:text-white p-2 text-2xl hover:scale-105 hover:shadow-lg hover:shadow-gray-700/60'
+          onClick={()=>{setFilter({}); dispatch(fetchProductsByFiltersAsync({}));}}
+        >
+              Reset Filters
+        </button> 
+      </div>}
     <ProductGrid products={products}></ProductGrid>
     </div>   
     </>
